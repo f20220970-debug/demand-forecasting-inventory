@@ -1,0 +1,7 @@
+method,wape,bias,mae_units
+moving_avg_4,0.4915,-0.0964,181.9962
+exp_smoothing,0.4993,-0.1344,184.8851
+gradient_boost,0.513,-0.1846,189.9663
+selected per item (validation),0.5424,-0.1482,200.8596
+naive,0.631,-0.0389,233.6577
+seasonal_naive,0.6752,0.1274,250.05

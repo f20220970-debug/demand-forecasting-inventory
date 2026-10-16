@@ -1,0 +1,7 @@
+data/raw/*
+!data/raw/.gitkeep
+__pycache__/
+.venv/
+.pytest_cache/
+.DS_Store
+data/processed/transactions.parquet
