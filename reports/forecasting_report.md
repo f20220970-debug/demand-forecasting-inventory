@@ -4,8 +4,8 @@
 - 4,600 products over 104 complete weeks (2009-12-07 to 2011-11-28).
 - ABC: 990 A-products (21.5% of products) make 80% of revenue; only 1 A-products are stable (AX), 832 are erratic (AZ).
 - Forecast hold-out: last 13 weeks for the top 20 products, one week ahead.
-- Best single method: moving_avg_4 with WAPE 49.1% vs naive 63.1%; per-item methods chosen on a validation quarter give 54.2% (bias -14.8%).
-- At a 95% service level and 2-week lead time, safety stock falls from £70,434 (naive) to £53,953 with the selected methods, a 23% saving.
+- Best single method: moving_avg_4 with WAPE 49.1% vs naive 63.1%; per-item methods chosen on a validation quarter give 54.0% (bias -13.8%).
+- At a 95% service level and 2-week lead time, safety stock falls from £70,434 (naive) to £53,825 with the selected methods, a 24% saving.
 - Raising service from 95% to 99% increases safety stock by 41% for every plan, because z rises from 1.64 to 2.33.
 
 ### Analyst commentary
@@ -29,22 +29,22 @@ Items by class (rows: value, columns: predictability):
 | --- | --- | --- | --- |
 | moving_avg_4 | 0.4915 | -0.0964 | 181.9962 |
 | exp_smoothing | 0.4993 | -0.1344 | 184.8851 |
-| gradient_boost | 0.513 | -0.1846 | 189.9663 |
-| selected per item (validation) | 0.5424 | -0.1482 | 200.8596 |
+| gradient_boost | 0.5122 | -0.1585 | 189.6748 |
+| selected per item (validation) | 0.5405 | -0.1382 | 200.1473 |
 | naive | 0.631 | -0.0389 | 233.6577 |
 | seasonal_naive | 0.6752 | 0.1274 | 250.05 |
 
 ![Method WAPE](../outputs/charts/method_wape.png)
 ![Forecast vs actual](../outputs/charts/forecast_vs_actual.png)
 
-Methods chosen per item on the validation quarter: {'exp_smoothing': 8, 'gradient_boost': 4, 'moving_avg_4': 3, 'seasonal_naive': 3, 'naive': 2}.
+Methods chosen per item on the validation quarter: {'exp_smoothing': 9, 'gradient_boost': 3, 'moving_avg_4': 3, 'seasonal_naive': 3, 'naive': 2}.
 
 ## 4. Inventory plan
 | service_level | naive | selected | saving_value | saving_pct |
 | --- | --- | --- | --- | --- |
-| 0.9 | 54877.4811 | 42036.2701 | 12841.211 | 0.234 |
-| 0.95 | 70434.4845 | 53952.9686 | 16481.5159 | 0.234 |
-| 0.99 | 99616.8355 | 76306.7131 | 23310.1225 | 0.234 |
+| 0.9 | 54877.4811 | 41936.5864 | 12940.8947 | 0.2358 |
+| 0.95 | 70434.4845 | 53825.0259 | 16609.4585 | 0.2358 |
+| 0.99 | 99616.8355 | 76125.7614 | 23491.0742 | 0.2358 |
 
 ![Safety stock](../outputs/charts/safety_stock.png)
 
